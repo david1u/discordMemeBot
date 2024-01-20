@@ -32,4 +32,13 @@ client.on('messageCreate', async (message) => {
     }
 })
 
+client.on('interactionCreate', (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+        //console.log(interaction.commandName);
+        if(interaction.commandName === 'hey') {
+            interaction.reply('hey!');
+        }
+
+});
+
 client.login(process.env.DISCORD_BOT_ID);

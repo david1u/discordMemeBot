@@ -19,8 +19,14 @@ module.exports = {
 
                 const embed = new EmbedBuilder()
                 .setColor("Blue")
-                .setTitle('${title}')
+                .setTitle(`${title}`)
+                .setImage(`${image}`)
+                .setURL(`${image}`)
+                .setFooter({text: author})
+
+                await interaction.reply({ embeds: [embed]})
             })
         }
+        meme();
     }
 }
