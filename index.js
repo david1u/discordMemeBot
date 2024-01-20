@@ -12,9 +12,14 @@ client.on('ready', () => {
 })
 
 client.on('messageCreate', async (message) => {
-    if (message.content === 'ping') {
+    if (message.content === 'rose') {
         message.reply({
-            content: 'pong',
+            content: 'hack',
+        })
+    }
+    else if (message.content === 'cole') {
+        message.reply({
+            content: 'miller',
         })
     }
     else if (message.content === 'quote') {
