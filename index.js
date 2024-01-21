@@ -1,11 +1,15 @@
 // Watch my Discord Bot Project Tutorial video here: https://youtu.be/pDQAn18-2go - Discord Bot Tutorial | JavaScript & Node.js
 
-require('dotenv').config();
 
-const axios = require('axios');
-const { Client, GatewayIntentBits } = require('discord.js');
+import axios from "axios"
+import { Client, GatewayIntentBits } from 'discord.js';
+import { data } from "./meme";
+
+import * as dotenv from "dotenv"
+
+dotenv.config()
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-
 
 client.on('ready', () => {
     console.log('bot is ready');
@@ -37,6 +41,10 @@ client.on('interactionCreate', (interaction) => {
         //console.log(interaction.commandName);
         if(interaction.commandName === 'hey') {
             interaction.reply('hey!');
+        }
+        
+        else if(interaction.commandName === 'ping') {
+            interaction.reply('pong');
         }
 
 });
